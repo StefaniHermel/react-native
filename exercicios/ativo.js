@@ -17,4 +17,4 @@
  *   ./07-useeffect-meta-de-passos
  */
 
-export { default } from "./02-usestate-volume";
+export { default } from "./06-useeffect-boas-vindas";
