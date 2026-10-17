@@ -17,4 +17,4 @@
  *   ./07-useeffect-meta-de-passos
  */
 
-export { default } from "./06-useeffect-boas-vindas";
+export { default } from "./07-useeffect-meta-de-passos";
