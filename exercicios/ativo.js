@@ -17,4 +17,4 @@
  *   ./07-useeffect-meta-de-passos
  */
 
-export { default } from "./07-useeffect-meta-de-passos";
+export { default } from "./04-usestate-lista-de-compras";
