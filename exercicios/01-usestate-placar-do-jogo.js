@@ -1,3 +1,4 @@
+
 /**
  * Exercício 1 — Placar do jogo
  * useState · dois estados · 7 min
@@ -20,13 +21,65 @@ import { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 
 export default function App() {
-  // 1. os estados ficam aqui
+  // 1. Crie dois estados: timeA e timeB, começando em 0.
+  const [timeA, setTimeA] = useState(0);
+  const [timeB, setTimeB] = useState(0);
+
+  // 4. Função para zerar os dois estados.
+  // A função setTimeA volta o Time A para 0.
+  // A função setTimeB volta o Time B para 0.
+  function zerar() {
+    setTimeA(0);
+    setTimeB(0);
+  }
+
+  // Desafio extra: verificar quem está vencendo.
+  let resultado;
+
+  if (timeA === timeB) {
+    resultado = 'Empate';
+  } else if (timeA > timeB) {
+    resultado = 'Time A vencendo';
+  } else {
+    resultado = 'Time B vencendo';
+  }
 
   return (
-    <View style={{ flex: 1, padding: 24, paddingTop: 60, gap: 12 }}>
+    <View
+      style={{
+        flex: 1,
+        padding: 24,
+        paddingTop: 60,
+        gap: 12,
+      }}
+    >
       <Text>Exercício 1 — Placar do jogo</Text>
-      {/* 2. o que aparece na tela */}
-      {/* 3. os botões */}
+
+      {/* 2. Mostre o placar atualizado na tela. */}
+      <Text>
+        Time A {timeA} x {timeB} Time B
+      </Text>
+
+      {/* Desafio extra: mostrar o resultado da comparação. */}
+      <Text>{resultado}</Text>
+
+      {/* 3. Botão para marcar um gol para o Time A. */}
+      <Button
+        title="Gol do Time A"
+        onPress={() => setTimeA((atual) => atual + 1)}
+      />
+
+      {/* 3. Botão para marcar um gol para o Time B. */}
+      <Button
+        title="Gol do Time B"
+        onPress={() => setTimeB((atual) => atual + 1)}
+      />
+
+      {/* 4. Botão para zerar o placar dos dois times. */}
+      <Button
+        title="Zerar placar"
+        onPress={zerar}
+      />
     </View>
   );
 }
